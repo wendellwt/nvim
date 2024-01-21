@@ -11,7 +11,7 @@ use a decent gcc compiler:
 
 ## 2. compile nvim
 
-<described elsewhere>
+described elsewhere
 
 
 ## 3. LazyVim prerequisites
@@ -66,12 +66,12 @@ check on all prereqs:
 remaining warnings:
 
 ```
-{flash.nvim}: unknown key <vscode>
-lazygit not installed
-No clipboard tool found.
-Perl is too old
-neovim-ruby-host not found
-conflicting keymap exists for mode **"n"**, lhs: **"gc"**
+  {flash.nvim}: unknown key <vscode>
+  lazygit not installed
+  No clipboard tool found.
+  Perl is too old
+  neovim-ruby-host not found
+  conflicting keymap exists for mode **"n"**, lhs: **"gc"**
 ```
 
 
@@ -92,4 +92,63 @@ if you need to start over:
     cd ~/.local/state/  ; mv nvim nvim_bad
     cd ~/.cache/        ; mv nvim nvim_bad
 ```
+
+## possible way to get pyright to behave
+
+```
+  pip3 uninstall pyright
+  and remove site-package files
+```
+
+get recent node/nvim
+
+```
+
+and turn off everything via config file:
+```
+    vim pyright.json
+{
+  typeCheckingMode = "off"
+}
+```
+
+then, to test:
+
+```
+  pyright zip_route.py
+```
+
+## telescope
+
+config file is `.config/nvim/lua/plugins/telescope-nvim.lua`
+
+which has:
+```
+  options  = {
+    previewer = true, -- wt
+    grep_previewer = true, -- wt
+  },
+```
+and:
+```
+  keys = {
+      -- the one I was trying to get working all along:
+      { "<leader>ff", builtin.grep_string, desc = "grep_string" },
+  }
+```
+
+also, something like this should work:
+```
+  require('telescope.builtin').live_grep({
+    search_dirs = { path },
+    prompt_title = string.format('Grep in [%s]', vim.fs.basename(path)),
+  })
+```
+
+refs:
+<br/>
+[Telescope live grep args](https://github.com/nvim-telescope/telescope-live-grep-args.nvim)
+<br/>
+[Telescope live_grep inside certain folders?](https://www.reddit.com/r/neovim/comments/xj784v/telescope_live_grep_inside_certain_folders/)
+
 
