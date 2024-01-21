@@ -11,12 +11,27 @@ use a decent gcc compiler:
 
 ## compile nvim
 
-described elsewhere
+[Install from source](https://github.com/neovim/neovim/blob/master/INSTALL.md#install-from-source)
+
+note: using gcc8
+
+```
+    git clone https://github.com/neovim/neovim
+    make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/neovim -DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    make install
+```
 
 
 ## LazyVim prerequisites
 
-check on all prereqs:
+check on all prereqs
+
+make sure PATH is set:
+~~~
+  export PATH=/home/wendell/pkgs/node-v15.14.0-linux-x64/bin:$PATH
+  export PATH=~/.cargo/bin:$PATH
+  export PATH=~/neovim/bin:$PATH
+~~~
 
 neovim:
 ```
