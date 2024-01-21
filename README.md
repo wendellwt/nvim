@@ -17,6 +17,8 @@ described elsewhere
 ## LazyVim prerequisites
 
 check on all prereqs:
+
+neovim:
 ```
     $ ~/neovim/bin/nvim --version
     NVIM v0.10.0-dev-2128+g78b000c74
@@ -25,40 +27,16 @@ check on all prereqs:
     Run "nvim -V1 -v" for more info
 ```
 
+git:
 ```
     $ git --version
     git version 2.33.0.664.g0785eb7
 ```
 
+lazygit:
 ```
     $ lazygit
     lazygit: command not found
-```
-
-```
-    $ rg --version
-    ripgrep 13.0.0
-    -SIMD -AVX (compiled)
-    +SIMD +AVX (runtime)
-```
-
-```
-    $ fd --version
-    fd 8.6.0
-```
-
-```
-    export PATH=/home/wendell/pkgs/node-v14.21.3-linux-x64/bin:$PATH
-    $ node --version
-    v14.21.3
-    lazyvim $ npm --version
-    6.14.18
-```
-
-```
-    $ npm install -g neovim
-    + neovim@4.10.1
-    added 35 packages from 25 contributors in 3.537s
 ```
 
 not sure how to install cargo; it was copied from another installation:
@@ -70,11 +48,49 @@ not sure how to install cargo; it was copied from another installation:
     cargo 1.75.0 (1d8b05cdd 2023-11-20)
 ```
 
+ripgrep (a cargo thing):
+```
+    $ rg --version
+    ripgrep 13.0.0
+    -SIMD -AVX (compiled)
+    +SIMD +AVX (runtime)
+```
+
+fd (a cargo thing):
+```
+    $ fd --version
+    fd 8.6.0
+```
+
+node, npm:
+```
+    export PATH=/home/wendell/pkgs/node-v14.21.3-linux-x64/bin:$PATH
+    $ node --version
+    v14.21.3
+    lazyvim $ npm --version
+    6.14.18
+```
+
+npm packages:
+```
+    $ npm install -g neovim
+    + neovim@4.10.1
+    added 35 packages from 25 contributors in 3.537s
+```
+
 ## startup
+
+run NeoVIM and let it install items
+
+```
+    nvim
+```
 
 remaining warnings:
 
 ```
+  :checkhealth
+
   {flash.nvim}: unknown key <vscode>
   lazygit not installed
   No clipboard tool found.
@@ -82,7 +98,6 @@ remaining warnings:
   neovim-ruby-host not found
   conflicting keymap exists for mode **"n"**, lhs: **"gc"**
 ```
-
 
 ## Lazy package manager
 
@@ -109,7 +124,7 @@ if you need to start over:
   and remove site-package files
 ```
 
-get recent node/nvim
+make sure about the recent node/nvim
 
 and turn off everything via config file:
 ```
@@ -132,8 +147,8 @@ config file is `.config/nvim/lua/plugins/telescope-nvim.lua`
 which has:
 ```
   options  = {
-    previewer = true, -- wt
-    grep_previewer = true, -- wt
+    previewer = true,
+    grep_previewer = true,
   },
 ```
 and:
@@ -144,7 +159,7 @@ and:
   }
 ```
 
-also, something like this should work:
+also, something like this is what others use:
 ```
   require('telescope.builtin').live_grep({
     search_dirs = { path },
