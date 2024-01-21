@@ -102,14 +102,12 @@ if you need to start over:
 
 get recent node/nvim
 
-```
-
 and turn off everything via config file:
 ```
-    vim pyright.json
-{
-  typeCheckingMode = "off"
-}
+vim pyright.json
+  {
+    typeCheckingMode = "off"
+  }
 ```
 
 then, to test:
