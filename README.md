@@ -1,5 +1,7 @@
 # my own nvim config
 
+How I was able to get a recent NeoVIM (0.10) installed and operating with Telescope+grep.
+
 ## setup
 
 use a decent gcc compiler:
