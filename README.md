@@ -1,6 +1,6 @@
 # my own nvim config
 
-## 1. setup
+## setup
 
 use a decent gcc compiler:
 ```
@@ -9,12 +9,12 @@ use a decent gcc compiler:
     gcc (GCC) 11.2.1 20220127 (Red Hat 11.2.1-9)
 ```
 
-## 2. compile nvim
+## compile nvim
 
 described elsewhere
 
 
-## 3. LazyVim prerequisites
+## LazyVim prerequisites
 
 check on all prereqs:
 ```
@@ -149,4 +149,33 @@ refs:
 <br/>
 [Telescope live_grep inside certain folders?](https://www.reddit.com/r/neovim/comments/xj784v/telescope_live_grep_inside_certain_folders/)
 
+
+## nerdfonts on windows
+
+refs:
+<br/>
+[Beautify your Windows Terminal using Nerd Fonts and Oh-My-Posh](https://medium.com/@vedantkadam541/beautify-your-windows-terminal-using-nerd-fonts-and-oh-my-posh-4f4393f097)
+
+which says to:
+```
+  mkdir fira
+  cd fira/
+  wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.1/FiraCode.zip
+  unzip FiraCode.zip
+```
+
+and then, in File Explorer:
+
+```
+    highlight all .ttf files
+      -> Install
+```
+
+then, in PuTTY:
+
+```
+  -> Load
+  -> Appearance
+    FiraCode Nerd Font Mono
+```
 
