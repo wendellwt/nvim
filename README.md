@@ -191,13 +191,13 @@ then, in PuTTY:
 ## keymaps:
 
 ~~~
-<leader>ee    :NvimTreeToggle      -- toggle file explorer
-<leader>er    :NvimTreeFocus       -- toggle focus to file explorer
-<leader>ef    :NvimTreeFindFile    -- find file in file explorer
+    ee    :NvimTreeToggle      -- toggle file explorer
+    er    :NvimTreeFocus       -- toggle focus to file explorer
+    ef    :NvimTreeFindFile    -- find file in file explorer
 
-<leader>tb    :Telescope buffers
-<leader>fp    .find_files() end,    desc = "Find Plugin File"
-<leader>ff    builtin.grep_string   desc = "grep_string"
-<leader>fb    builtin.buffers
+    tb    :Telescope buffers
+    fp    .find_files() end,    desc = "Find Plugin File"
+    ff    builtin.grep_string   desc = "grep_string"
+    fb    builtin.buffers
 ~~~
 
