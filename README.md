@@ -1,2 +1,95 @@
-# nvim
-my own nvim config
+# my own nvim config
+
+## 1. setup
+
+use a decent gcc compiler:
+```
+    export PATH=/opt/rh/devtoolset-11/root/usr/bin/:$PATH
+    gcc --version
+    gcc (GCC) 11.2.1 20220127 (Red Hat 11.2.1-9)
+```
+
+## 2. compile nvim
+
+<described elsewhere>
+
+
+## 3. LazyVim prerequisites
+
+check on all prereqs:
+```
+    $ ~/neovim/bin/nvim --version
+    NVIM v0.10.0-dev-2128+g78b000c74
+    Build type: RelWithDebInfo
+    LuaJIT 2.1.1703358377
+    Run "nvim -V1 -v" for more info
+```
+
+```
+    $ git --version
+    git version 2.33.0.664.g0785eb7
+```
+
+```
+    $ lazygit
+    lazygit: command not found
+```
+
+```
+    $ rg --version
+    ripgrep 13.0.0
+    -SIMD -AVX (compiled)
+    +SIMD +AVX (runtime)
+```
+
+```
+    $ fd --version
+    fd 8.6.0
+```
+
+```
+    export PATH=/home/wendell/pkgs/node-v14.21.3-linux-x64/bin:$PATH
+    $ node --version
+    v14.21.3
+    lazyvim $ npm --version
+    6.14.18
+```
+
+```
+    $ npm install -g neovim
+    + neovim@4.10.1
+    added 35 packages from 25 contributors in 3.537s
+```
+
+## startup
+
+remaining warnings:
+
+```
+{flash.nvim}: unknown key <vscode>
+lazygit not installed
+No clipboard tool found.
+Perl is too old
+neovim-ruby-host not found
+conflicting keymap exists for mode **"n"**, lhs: **"gc"**
+```
+
+
+## Lazy package manager
+
+[Installing NeoVim and Lazy (Package Manager)](https://medium.com/@shaikzahid0713/installing-neovim-and-packer-package-manager-for-neovim-30e166f8495a)
+
+which just says to populate `lazy-config.lua` with the right config
+
+## starting over
+
+if you need to start over:
+
+```
+    cd ~/.config/       ; mv nvim nvim_bad
+
+    cd ~/.local/share/  ; mv nvim nvim_bad
+    cd ~/.local/state/  ; mv nvim nvim_bad
+    cd ~/.cache/        ; mv nvim nvim_bad
+```
+
