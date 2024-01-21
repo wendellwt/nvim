@@ -11,16 +11,16 @@ use a decent gcc compiler:
 
 ## compile nvim
 
-[Install from source](https://github.com/neovim/neovim/blob/master/INSTALL.md#install-from-source)
+see: [Install from source](https://github.com/neovim/neovim/blob/master/INSTALL.md#install-from-source)
 
-note: using gcc8
+note: using gcc11
 
 ```
     git clone https://github.com/neovim/neovim
+    cd neovim
     make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/neovim -DCMAKE_BUILD_TYPE=RelWithDebInfo"
     make install
 ```
-
 
 ## LazyVim prerequisites
 
@@ -122,7 +122,7 @@ which just says to populate `lazy-config.lua` with the right config
 
 ## starting over
 
-if you need to start over:
+if you need to start over, just move all current items aside:
 
 ```
     cd ~/.config/       ; mv nvim nvim_bad
@@ -149,8 +149,20 @@ vim pyright.json
   }
 ```
 
-then, to test:
+consider adding these (from [Pyright Configuration](https://github.com/microsoft/pyright/blob/main/docs/configuration.md) ):
 
+~~~
+  analyzeUnannotatedFunctions  "false"
+  strictParameterNoneValue     "false"
+  enableTypeIgnoreComments     "false"
+
+  reportMissingModuleSource    "none"
+  reportInvalidTypeForm        "none"
+  reportMissingImports         "none"
+  reportUndefinedVariable      "none"
+~~~
+
+then, to test:
 ```
   pyright zip_route.py
 ```
