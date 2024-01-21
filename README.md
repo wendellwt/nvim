@@ -61,6 +61,15 @@ check on all prereqs:
     added 35 packages from 25 contributors in 3.537s
 ```
 
+not sure how to install cargo; it was copied from another installation:
+```
+    # copied from elsewhere just to get tree-sitter:
+    . "$HOME/.cargo/env"
+
+    $ cargo --version
+    cargo 1.75.0 (1d8b05cdd 2023-11-20)
+```
+
 ## startup
 
 remaining warnings:
@@ -178,4 +187,17 @@ then, in PuTTY:
   -> Appearance
     FiraCode Nerd Font Mono
 ```
+
+## keymaps:
+
+~~~
+<leader>ee    :NvimTreeToggle      -- toggle file explorer
+<leader>er    :NvimTreeFocus       -- toggle focus to file explorer
+<leader>ef    :NvimTreeFindFile    -- find file in file explorer
+
+<leader>tb    :Telescope buffers
+<leader>fp    .find_files() end,    desc = "Find Plugin File"
+<leader>ff    builtin.grep_string   desc = "grep_string"
+<leader>fb    builtin.buffers
+~~~
 
