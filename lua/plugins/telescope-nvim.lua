@@ -24,8 +24,8 @@ return {
   -- ???????????????
   keys = {
     -- the one I was trying to get working all along:
-    { "<leader>tf", builtin.grep_string, desc = "grep_string" },
-    { "<leader>tp",
+    { "<leader>tg", builtin.grep_string, desc = "grep_string" },
+    { "<leader>tf",
         function() require("telescope.builtin").find_files() end,
         -- function() require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root }) end,
         desc = "Find File",

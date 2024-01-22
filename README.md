@@ -227,7 +227,7 @@ and:
 ```
   keys = {
       -- the one I was trying to get working all along:
-      { "<leader>ff", builtin.grep_string, desc = "grep_string" },
+      { "<leader>tg", builtin.grep_string, desc = "grep_string" },
   }
 ```
 
@@ -283,8 +283,8 @@ then, in PuTTY:
     <> ef    :NvimTreeFindFile    -- find file in file explorer
 
     -- what we wanted to do all along:
-    <> tf    builtin.grep_string   desc = "grep_string"
-    <> tp    .find_files() end,    desc = "Find Plugin File"
+    <> tg    builtin.grep_string   desc = "grep_string"
+    <> tf    .find_files() end,    desc = "Find Plugin File"
     <> tb    :Telescope buffers
     <> tx    builtin.buffers
 ~~~
