@@ -23,16 +23,15 @@ return {
   },
   -- ???????????????
   keys = {
-    { "<leader>tb", ":Telescope buffers<cr>" },
-      {
-        "<leader>fp",
+    -- the one I was trying to get working all along:
+    { "<leader>tf", builtin.grep_string, desc = "grep_string" },
+    { "<leader>tp",
         function() require("telescope.builtin").find_files() end,
         -- function() require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root }) end,
-        desc = "Find Plugin File",
-      },
-      -- the one I was trying to get working all along:
-      { "<leader>ff", builtin.grep_string, desc = "grep_string" },
-      { "<leader>fb", builtin.buffers, {} }
+        desc = "Find File",
+    },
+    { "<leader>tb", ":Telescope buffers<cr>" },
+    { "<leader>tx", builtin.buffers, {} }
 
   },
   -- ???????????????
