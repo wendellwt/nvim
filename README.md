@@ -17,6 +17,12 @@ see: [Install from source](https://github.com/neovim/neovim/blob/master/INSTALL.
 
 note: using gcc11
 
+cmake needed this:
+```
+    sudo apt install gettext
+```
+
+here goes:
 ```
     git clone https://github.com/neovim/neovim
     cd neovim
@@ -65,6 +71,16 @@ not sure how to install cargo; it was copied from another installation:
     cargo 1.75.0 (1d8b05cdd 2023-11-20)
 ```
 
+and/or possibly these:
+```
+    cargo install cargo-update
+    cargo install --force cargo-strip
+```
+did this on cssi-ciws (may not be right):
+```
+    sudo apt install fdclone
+```
+
 ripgrep (a cargo thing):
 ```
     $ rg --version
@@ -94,6 +110,17 @@ npm packages:
     + neovim@4.10.1
     added 35 packages from 25 contributors in 3.537s
 ```
+
+## get this repo
+
+clone this repo:
+
+~~~
+    cd .config/
+    mv nvim nvim_before_my_git
+    git clone git@github.com:wendellwt/nvim.git
+~~~
+
 
 ## startup
 
@@ -138,9 +165,11 @@ if you need to start over, just move all current items aside:
 
 ```
   pip3 uninstall pyright
-  and remove site-package files
 ```
-
+and remove site-package files
+```
+  pip3 install pyright
+```
 make sure about the recent node/nvim
 
 and turn off everything via config file:
@@ -168,6 +197,20 @@ then, to test:
 ```
   pyright zip_route.py
 ```
+
+Note: on cssi-ciws, it was very difficult to disable linters.
+There were:
+* flake8
+* pyright
+* pycodestyle
+* pyflakes
+
+Various source files were deleted in these dirs:
+~~~
+  ~/.local/share/nvim/mason/packages/python-lsp-server/venv/bin/
+  ~/.local/share/nvim/mason/packages/python-lsp-server/venv/lib/python3.10/site-packages
+~~~
+YMMV.
 
 ## telescope
 
