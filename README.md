@@ -6,7 +6,6 @@ How I was able to get a recent NeoVIM (0.10) installed and operating with Telesc
 
 use a decent gcc compiler:
 ```
-    export PATH=/opt/rh/devtoolset-11/root/usr/bin/:$PATH
     gcc --version
     gcc (GCC) 11.2.1 20220127 (Red Hat 11.2.1-9)
 ```
@@ -206,10 +205,10 @@ There were:
 * pyflakes
 
 Various source files were deleted in these dirs:
-~~~
+```
   ~/.local/share/nvim/mason/packages/python-lsp-server/venv/bin/
   ~/.local/share/nvim/mason/packages/python-lsp-server/venv/lib/python3.10/site-packages
-~~~
+```
 YMMV.
 
 ## telescope
@@ -277,15 +276,29 @@ then, in PuTTY:
 
 ## keymaps:
 
-~~~
-    <> ee    :NvimTreeToggle      -- toggle file explorer
-    <> er    :NvimTreeFocus       -- toggle focus to file explorer
-    <> ef    :NvimTreeFindFile    -- find file in file explorer
+see neovim/nvim_dev_env_keymaps.odt on piedmont
 
-    -- what we wanted to do all along:
-    <> tg    builtin.grep_string   desc = "grep_string"
-    <> tf    .find_files() end,    desc = "Find Plugin File"
-    <> tb    :Telescope buffers
-    <> tx    builtin.buffers
-~~~
 
+## pyproject.toml
+
+```
+#wt: argument-naming-style = "snake_case"
+argument-naming-style = "any"
+
+bad-names = [
+    #wt: "foo",
+
+good-names = [ # wt: "i",
+
+disable = [
+    # wt added:
+    "redefined-outer-name",
+    "trailing-newlines",
+    "multiple-statements",
+    ]
+
+# wt: ignore-none = true
+ignore-none = false
+
+init-hook = 'import sys; sys.path.append("/home/wendell/.local/lib/python3.9/site-packages/"); '
+```
