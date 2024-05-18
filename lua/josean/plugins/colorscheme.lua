@@ -40,6 +40,7 @@ return {
       end,
     })
 
-    vim.cmd("colorscheme tokyonight")
+    -- wt: vim.cmd("colorscheme tokyonight")
+    vim.cmd("colorscheme sorbet")
   end,
 }
