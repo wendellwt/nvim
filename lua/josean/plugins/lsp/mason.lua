@@ -36,7 +36,7 @@ return {
         -- wt: "graphql",
         -- wt: "emmet_ls",
         -- wt: "prismals",
-        "pyright",
+        -- wt jun15; "pyright",
       },
     })
 
