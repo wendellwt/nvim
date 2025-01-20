@@ -1,0 +1,35 @@
+return {
+  'lukas-reineke/indent-blankline.nvim',
+  -- require("ibl").setup(),
+  event = { "BufReadPre", "BufNewFile" }, -- wt
+  main = 'ibl',
+  --wt;config = function()
+  --wt;  require('ibl').setup()
+  --wt;end,
+  opts = {
+    indent = {
+      char = "┊",
+      -- wt: char = '▏',
+
+    -- flail: context_char = "!",
+    -- flail: show_current_context = true,
+    -- flail: show_current_context_start = true,
+    },
+    scope = {
+      show_start = true,
+      show_end = true,
+      show_exact_scope = true,
+    },
+    exclude = {
+      filetypes = {
+        'help',
+        'startify',
+        'dashboard',
+        'packer',
+        'neogitstatus',
+        'NvimTree',
+        'Trouble',
+      },
+    },
+  },
+}

@@ -1,0 +1,26 @@
+return {
+  'lukas-reineke/indent-blankline.nvim',
+  main = 'ibl',
+  opts = {
+    indent = {
+      char = "┊",
+      -- wt: char = '▏',
+    },
+    --wt: scope = {
+    --wt:   show_start = false,
+    --wt:   show_end = false,
+    --wt:   show_exact_scope = false,
+    --wt: },
+    exclude = {
+      filetypes = {
+        'help',
+        'startify',
+        'dashboard',
+        'packer',
+        'neogitstatus',
+        'NvimTree',
+        'Trouble',
+      },
+    },
+  },
+}
