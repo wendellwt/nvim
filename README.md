@@ -1,4 +1,27 @@
 
+# My very own neovim configuration
+
+### use ruff for linting, but disable reformatting
+
+put this into the pyproject.toml file at the top of each git tree:
+
+```
+# [tool.ruff]
+# select = []
+
+[tool.ruff.format]
+# this is the one that works:
+exclude = ["*.py"]
+
+[tool.ruff.lint]
+select = ["E", "F"]
+ignore = [
+    "F401",
+    "E402",  #  Module level import not at top of file
+    "E701",  #  Multiple statements on one line (colon)
+]
+```
+
 # some notes about installing neovim
 
 ### install node, npm via:
